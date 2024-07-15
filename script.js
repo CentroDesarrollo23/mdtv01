@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-link');
-  
+    console.log(navLinks)
     navLinks.forEach(link => {
       link.addEventListener('click', function(event) {
         event.preventDefault(); // Evita la acción predeterminada del enlace
