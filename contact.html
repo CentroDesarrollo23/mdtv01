@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="contact.css"> <!-- Aquí puedes incluir tu CSS personalizado si es necesario -->
+</head>
+<body>
+    <header>
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+                <div id="logo-container">
+                    <a href="main.html">
+                        <img id="logo" src="./Imagenes/logo.png"  alt="MiSitio Logo">
+                    </a>  
+                    <span id="logo-text">M D T</span>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="main.html">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="flex-container">
+        <form class="form-container" id="myForm" onsubmit="return mostrarAlerta()">
+            <div class="mb-3">
+                <label for="company" class="form-label required-label">Company</label>
+                <input type="text" class="form-control" id="company" name="company" placeholder="Name of Company" required>
+            </div>
+            <div class="mb-3">
+                <label for="firstName" class="form-label required-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" required>
+            </div>
+            <div class="mb-3">
+                <label for="lastName" class="form-label required-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label required-label">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+            </div>
+            <div class="mb-3">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" class="form-control" id="country" name="country" placeholder="Country">
+            </div>
+            <div class="mb-3">
+                <label for="city" class="form-label">City</label>
+                <input type="text" class="form-control" id="city" name="city" placeholder="City">
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label required-label">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+            </div>
+
+            <!-- Modal para confirmar el registro del formulario -->
+            <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header bg-success text-white">
+                            <i class="check-circle"></i> <!-- Icono de check verde -->                        	
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> <!-- Botón de cerrar -->
+                        </div>
+                        <div class="modal-body">
+                            <h4 class="modal-title">Awesome!</h4>
+                            <p class="text-center">Form has been registered successfully</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-success btn-block" onclick="limpiarFormulario()" data-bs-dismiss="modal">OK</button> <!-- Botón OK verde claro -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Botón de envío del formulario -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <footer>
+        <!-- Aquí puedes añadir tu pie de página si es necesario -->
+    </footer>
+
+    <!-- Incluir jQuery y Bootstrap Bundle al final del cuerpo del documento -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+        function mostrarAlerta() {
+            // Mostrar el modal de confirmación
+            $('#exampleModalToggle').modal('show');
+            // Devolver false para evitar el envío automático del formulario
+            return false;
+        }
+
+        function limpiarFormulario() {
+            // Limpiar el formulario después de aceptar el modal
+            document.getElementById("myForm").reset();
+            // Cerrar el modal
+            $('#exampleModalToggle').modal('hide');
+        }
+    </script>
+</body>
+</html>

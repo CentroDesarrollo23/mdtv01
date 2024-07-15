@@ -1,0 +1,225 @@
+body {
+    padding-top: 70px; /* Espacio para el header fijo */
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    color: var(--portalThemeColor8);
+}
+
+.footer span {
+    display: block;
+    margin: 5px 0;
+}
+
+@media (min-width: 600px) {
+    .footer {
+        padding: 40px;
+    }
+}
+#logo-container {
+margin-left: 200px;
+display: flex; /* Usa flexbox para alinear elementos */
+align-items: center; /* Alinea verticalmente los elementos */
+justify-content: center; /* Centra horizontalmente los elementos */
+}
+#logo {
+margin-right: 10px; /* Espacio de 10px a la derecha de la imagen */
+height: 50px; /* Ajusta la altura de la imagen según sea necesario */
+}
+.navbar {
+background-color: #0c5283;
+position: fixed;
+width: 100%;
+top: 0;
+z-index: 1030; /* Asegúrate de que el navbar esté sobre otros elementos */
+}
+#logo-container {
+opacity: 0;
+animation: moveLogo 1s forwards;
+}
+#logo-text {
+text-decoration: none;
+user-select: none;
+margin-left: 10px;
+font-size: 1.5rem; /* Usa unidades relativas */
+color: #ffffff;
+opacity: 0;
+animation: showText 1s forwards 1s; /* Empieza después de 1s */
+}
+.navbar-light .navbar-nav .nav-link {
+color: #ffffff;
+}
+.navbar-light .navbar-brand {
+color: #ffffff;
+}
+/* Cambia el color del texto cuando el enlace está activo o en foco */
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+color: #ffffff;
+}
+.navbar-nav {
+margin-left: auto;
+margin-right: 200px;
+}
+@keyframes moveLogo {
+to {
+    opacity: 1;
+    transform: translateX(0); /* Asegura que se mueva en relación con su posición inicial */
+}
+}
+@keyframes showText {
+to {
+    opacity: 1;
+    transform: translateX(0);
+}
+}
+@media (max-width: 768px) {
+#logo-container {
+    justify-content: center;
+    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+}
+#logo {
+    height: 40px; /* Ajusta la altura de la imagen en pantallas pequeñas */
+}
+#logo-text {
+    font-size: 1.2rem; /* Ajusta el tamaño del texto en pantallas pequeñas */
+}
+}
+
+@media (min-width: 1024px) {
+    .navbar-nav {
+    margin-left: 200px;
+    }
+}
+
+#scrollToTopBtn {
+display: none; /* Inicialmente oculto */
+position: fixed;
+bottom: 20px;
+right: 20px;
+z-index: 99;
+font-size: 3rem; /* Tamaño del ícono */
+color: #64aaf0; /* Color del ícono */
+cursor: pointer;
+transition: color 0.3s, transform 0.3s;
+}
+.navbar.scrolled {
+backdrop-filter: blur(5px); /* Aplica el desenfoque */
+background-color: rgba(41, 94, 131, 0.8); /* Ajusta la transparencia del fondo */
+transition: backdrop-filter 0.3s, background-color 0.3s; /* Transición suave */
+}
+
+#scrollToTopBtn:hover {
+color: #646566; /* Cambia de color al pasar el ratón */
+transform: scale(1.2); /* Efecto de escala al pasar el ratón */
+}
+.btn-menu
+{
+    color: #FFF;
+    font-size: 25px;
+}
+
+
+.flex-container{
+    display: block;
+    margin: 0;
+    padding: 5% 10% 5% 10%;
+}
+
+.form-container{
+    width: 100%;
+    height: auto;
+}
+
+.required-label {
+    position: relative;
+}
+.required-label::before {
+    content: '*';
+    color: red; /* Color del asterisco, puedes cambiarlo según tu diseño */
+    margin-right: 4px; /* Espacio entre el asterisco y el texto de la etiqueta */
+    position: absolute;
+    left: -10px; /* Ajusta la posición del asterisco según sea necesario */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Placeholder para inputs */
+.form-control::placeholder {
+    color: #ccc; /* Color del placeholder más pálido */
+    opacity: 1; /* Asegura que el placeholder tenga la misma opacidad en todos los navegadores */
+}
+
+/* Placeholder para textarea */
+.form-control textarea::placeholder {
+    color: #ccc; /* Color del placeholder más pálido */
+    opacity: 1; /* Asegura que el placeholder tenga la misma opacidad en todos los navegadores */
+}
+
+/* Estilos para el modal */
+.modal-content {
+    background-color: #ffffff; /* Fondo blanco */
+}
+
+.modal-dialog {
+    text-align: center; /* Centrar contenido */
+}
+
+.modal-header {
+    border-bottom: none;
+    position: relative;
+}
+
+.modal-title {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.modal-body{
+    text-align: center; /* Asegura que el texto se alinee al centro */
+    align-items: center;
+}
+
+.modal-footer {
+    text-align: center; /* Asegura que el texto se alinee al centro */
+    align-items: center; /* Alinea los elementos secundarios (si son flex) al centro */
+    display: flex; /* Asegura que los elementos hijos se comporten como flexibles */
+    justify-content: center; /* Alinea los elementos hijos al centro */
+}
+
+.modal-footer .btn-success {
+    display: flex;
+    background-color: #7ed321; /* Verde claro para el botón OK */
+    border-color: #7ed321;
+    color: #ffffff;
+    align-items: center;
+    
+}
+
+.icon-box {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    background-color: #7ed321; /* Verde para el fondo del icono */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-box i {
+    font-size: 48px;
+    color: #ffffff; /* Color blanco para el icono */
+}
+
+.modal-body p {
+    color: #333333; /* Color de texto oscuro */
+}
+
+.modal-header .btn-close {
+    color: #ffffff; /* Color blanco para el botón de cerrar */
+}

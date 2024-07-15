@@ -1,0 +1,332 @@
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Page</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<style>
+  body {
+    padding-top: 70px; /* Espacio para el header fijo */
+  }
+  .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f1f1f1;
+      color: var(--portalThemeColor8);
+  }
+
+  .footer span {
+      display: block;
+      margin: 5px 0;
+  }
+
+  @media (min-width: 600px) {
+      .footer {
+          padding: 40px;
+      }
+  }
+  #logo-container {
+    margin-left: 200px;
+    display: flex; /* Usa flexbox para alinear elementos */
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos */
+  }
+  #logo {
+    margin-right: 10px; /* Espacio de 10px a la derecha de la imagen */
+    height: 50px; /* Ajusta la altura de la imagen según sea necesario */
+  }
+  .navbar {
+    background-color: #0c5283;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1030; /* Asegúrate de que el navbar esté sobre otros elementos */
+  }
+  #logo-container {
+    opacity: 0;
+    animation: moveLogo 1s forwards;
+  }
+  #logo-text {
+    text-decoration: none;
+    user-select: none;
+    margin-left: 10px;
+    font-size: 1.5rem; /* Usa unidades relativas */
+    color: #ffffff;
+    opacity: 0;
+    animation: showText 1s forwards 1s; /* Empieza después de 1s */
+  }
+  .navbar-light .navbar-nav .nav-link {
+    color: #ffffff;
+  }
+  .navbar-light .navbar-brand {
+    color: #ffffff;
+  }
+  /* Cambia el color del texto cuando el enlace está activo o en foco */
+  .navbar-light .navbar-nav .nav-link.active,
+  .navbar-light .navbar-nav .nav-link:focus,
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: #ffffff;
+  }
+  .navbar-nav {
+    margin-left: auto;
+    margin-right: 200px;
+  }
+  @keyframes moveLogo {
+    to {
+      opacity: 1;
+      transform: translateX(0); /* Asegura que se mueva en relación con su posición inicial */
+    }
+  }
+  @keyframes showText {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @media (max-width: 768px) {
+    #logo-container {
+      justify-content: center;
+      margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+    }
+    #logo {
+      height: 40px; /* Ajusta la altura de la imagen en pantallas pequeñas */
+    }
+    #logo-text {
+      font-size: 1.2rem; /* Ajusta el tamaño del texto en pantallas pequeñas */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+      .navbar-nav {
+        margin-left: 200px;
+      }
+    }
+
+  #scrollToTopBtn {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 3rem; /* Tamaño del ícono */
+    color: #64aaf0; /* Color del ícono */
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+  }
+  .navbar.scrolled {
+  backdrop-filter: blur(5px); /* Aplica el desenfoque */
+  background-color: rgba(41, 94, 131, 0.8); /* Ajusta la transparencia del fondo */
+  transition: backdrop-filter 0.3s, background-color 0.3s; /* Transición suave */
+  }
+
+  #scrollToTopBtn:hover {
+    color: #646566; /* Cambia de color al pasar el ratón */
+    transform: scale(1.2); /* Efecto de escala al pasar el ratón */
+  }
+  .btn-menu
+  {
+      color: #FFF;
+      font-size: 25px;
+  }
+</style>
+<header>
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      <div id="logo-container">
+        <img id="logo" src="/logo.png" alt="MiSitio Logo">
+        <span id="logo-text">M D T</span>
+      </div>
+      <button class="navbar-toggler " type="button" data-bs-target="#menuItems" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="scrollToSection('about-section')">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="scrollToSection('services-section')" >Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<body>
+  <div class="row sectionBlockLayout text-start" style="display: flex; flex-wrap: wrap; margin: 0px; min-height: auto; padding: 0px; align-items: center;">
+    <div class="container" style="padding: 0px; display: flex; flex-wrap: wrap;">
+      <div class="col-lg-6 columnBlockLayout" style="word-break: break-word; flex-grow: 1; display: flex; flex-direction: column; min-width: 300px;">
+        <div class="row sectionBlockLayout" style="display: flex; flex-wrap: wrap; padding: 8px; margin: 0px; min-height: 15px;"></div>
+        <img src="/Diagrama sin título.drawio.png" alt="Diagrama sin título.drawio" name="Diagrama sin título.drawio.png" style="width: 100%; height: auto; max-width: 100%; border-radius: 0 0 0 0; box-shadow: 0px 0px 0px #000000; border: 0 solid rgb(0, 0, 0); display: inline-block; position: relative; margin-left: auto; margin-right: auto;">
+      </div>
+      <div class="col-lg-6 columnBlockLayout" style="word-break: break-word; flex-grow: 1; display: flex; flex-direction: column; min-width: 300px; align-items: center; padding: 1rem;">
+        <h1 style="text-align: center; color: var(--portalThemeColor4); font-family: 'Avionic Wide Heavy', sans-serif;">
+          ​<b aria-label="Texto Comprehensive Presione Entrar para editar" style="position: relative; text-align: center;">&nbsp;Comprehensive <br></b>Digitization Service
+        </h1>
+        <p style="text-align: center; font-family: 'Avionic Wide Heavy', sans-serif;">We provide a comprehensive digitization service, starting from each company’s files in paper. The results are digital files that have been compressed in a format that allow good computational performance and facilitate the search of information reducing the response time and guaranteeing the accessibility, state, and image quality.</p>
+        <p style="text-align: center; color: var(--portalThemeColor4); font-family: 'Avionic Wide Heavy', sans-serif;">​<b aria-label="Texto Digital Presione Entrar para editar" style="position: relative; text-align: center;">Digital</b> transformation<br></p>
+      </div>
+    </div>
+  </div>
+  <div id="about-section" class="row sectionBlockLayout text-start" style="display: flex; flex-wrap: wrap; margin: 0px; min-height: auto; padding: 8px;">
+    <div class="container" style="padding: 0px; display: flex; flex-wrap: wrap;">
+      <div class="col-lg-6 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px; word-break: break-word;">
+        <img src="/seo.png" alt="purpose" name="purpose.png" style="width: 50%; height: auto; max-width: 100%; margin-left: auto; margin-right: auto;  padding: 5%;">
+        <h1 style="text-align: center;">Mission&nbsp;</h1>
+        <p>We are a company dedicated to providing the most innovative value proposition in comprehensive solutions for Archival and Document Management, IT, and the use of Information and Communication Technologies (ICT). We specialize in addressing our clients' needs with interconnected solutions, achieving the highest return for our stakeholders while maintaining a commitment to the environment.</p>
+      </div>
+      <div class="col-lg-6 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px; word-break: break-word;">
+        <img src="/leadership.png" alt="leadership" name="leadership.png" style="width: 50%; height: auto; max-width: 100%; margin-left: auto; margin-right: auto; padding: 5%;">
+        <h1 style="text-align: center;">Vission&nbsp;</h1>
+        <p>By 2023, we aim to be the leading provider of Archival and Document Management, IT, and Information and Communication Technologies (ICT) services in both the public and private sectors, offering high-quality services that set the standard in the market.</p>
+      </div>
+    </div>
+  </div>
+
+  <div  class="row sectionBlockLayout text-start" style="display: flex; flex-wrap: wrap; margin: 0px; min-height: auto; padding: 0px;">
+    <div class="container" style="padding: 0px; display: flex; flex-wrap: wrap;">
+      <div class="col-lg-6 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px; word-break: break-word;"><img src="/mm.png" alt="mm" name="mm.png" style="width: 100%; height: auto; max-width: 100%;"></div>
+      <div id="services-section" class="col-lg-6 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px; word-break: break-word;">
+        <img src="/WhatsApp Image 2024-07-11 at 4.18.35 PM.jpeg" alt="WhatsApp Image 2024-07-11 at 4.18.35 PM" name="WhatsApp Image 2024-07-11 at 4.18.35 PM.jpeg" style="width: 50%; height: auto; max-width: 100%; margin-left: auto; margin-right: auto; padding: 5%;">
+        <h1 style="text-align: center; color: var(--portalThemeColor4);">Destruction of physical <b aria-label="Texto files Presione Entrar para editar" style="position: relative;">files&nbsp;</b></h1>
+        <p style="text-align: center;">Once all the material has been scanned correctly, it is no longer necessary to continue paying expensive warehousing to maintain the information. Thus, we also take care of waste paper and massive digital transformation cardboard so you don´t have to worry about it.&nbsp;</p>
+      </div>
+    </div>
+  </div>
+  <div class="row sectionBlockLayout text-start" style="display: flex; flex-wrap: wrap; margin: 0px; min-height: auto; padding: 0px;">
+    <div class="container" style="padding: 0px; display: flex; flex-wrap: wrap;">
+      <div class="col-lg-6 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px; word-break: break-word; padding: 1rem;"><img src="/mdtcircle.png" alt="mdt_circle" name="mdt_circle.png" style="width: 70%; height: auto; max-width: 100%; margin-left: auto; margin-right: auto; padding: 5%;"></div>
+      <div class="col-lg-6 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px; word-break: break-word;">
+        <h1 style="text-align: center; color: var(--portalThemeColor4);">High speed <b aria-label="Texto scanning" style="position: relative;">scanning</b></h1>
+        <p style="text-align: center;">​our machines have the ability to <b aria-label="Texto scan up to 450 pages per minute (ppm) at 300 dots per inch (dpi), which is one of the fastest machines in the world" style="position: relative;">scan up to 450 pages per minute (ppm) at 300 dots per inch (dpi), which is one of the fastest machines in the world</b> this allow us to reduce the intervention time, offering a faster and more affordable service.&nbsp;</p>
+        <h1 style="text-align: center; color: var(--portalThemeColor4);">Organization of <b aria-label="Texto PDF files Presione Entrar para editar" style="position: relative;">PDF files&nbsp;</b></h1>
+        <p>Thanks to our advanced software, post-processing of images is <b>very fast and allows you to create PDF files that represent the contents of a physical folder</b>, allowing you to precisely find the information in less time.&nbsp;</p>
+      </div>
+    </div>
+  </div>
+  <div class="row sectionBlockLayout text-start" style="display: flex; flex-wrap: wrap; margin: 0px; min-height: auto; padding: 0px;">
+    <div class="container" style="padding: 0px; display: flex; flex-wrap: wrap;">
+      <div class="col-lg-6 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px; word-break: break-word;"><img src="/4b9a3ec4-ac9d-4dd5-80ad-223a0daea461.jpg" alt="4b9a3ec4-ac9d-4dd5-80ad-223a0daea461" name="4b9a3ec4-ac9d-4dd5-80ad-223a0daea461.jpg" style="width: 70%; height: auto; max-width: 100%; margin-left: auto; margin-right: auto; padding: 5%;"></div>
+      <div class="col-lg-6 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px; word-break: break-word;">
+        <h1 style="text-align: center; color: var(--portalThemeColor4);">Secure <b>storage&nbsp;</b></h1>
+        <p style="text-align: center;">It is not enough to digitilized the documents; it is necessary that the information transcends the organization and is kept safely. In this way, we complement our services with advice on the safe handling of digital information such as cloud storage.&nbsp;</p>
+      </div>
+    </div>
+  </div>
+  <div class="row sectionBlockLayout text-start" style="display: flex; flex-wrap: wrap; margin: 0px; min-height: auto; padding: 8px;">
+    <div class="container" style="padding: 0px; display: flex; flex-wrap: wrap;">
+      <div class="col-lg-6 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px; word-break: break-word;"><img src="/h.png" alt="h" name="h.png" style="width: 70%; height: auto; max-width: 100%; margin-left: auto; margin-right: auto;"></div>
+      <div class="col-lg-6 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px; word-break: break-word;">
+        <h1 style="text-align: center; color: var(--portalThemeColor4);">​​<b aria-label="Texto OCR:" style="position: relative;">OCR:&nbsp;</b></h1>
+        <h4 style="text-align: center;">(Optical Character Recognition)&nbsp;</h4>
+        <p style="text-align: center;">We can also offer an additional treatment for character recognition that allows you to find information contained within a document, it is ideal for organizations that require the investigation of its history&nbsp;</p>
+      </div>
+    </div>
+  </div>
+  <div class="row sectionBlockLayout text-start" style="display: flex; flex-wrap: wrap; margin: 0px; min-height: auto; padding: 8px;">
+    <div class="container" style="padding: 0px; display: flex; flex-wrap: wrap;">
+      <div class="col-lg-4 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px; word-break: break-word;"><img src="/im1.png" alt="im1" name="im1.png" style="width: 100%; height: auto; max-width: 100%;"></div>
+      <div class="col-lg-4 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px; word-break: break-word;"><img src="/im3.png" alt="im3" name="im3.png" style="width: 100%; height: auto; max-width: 100%;"></div>
+      <div class="col-lg-4 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px; word-break: break-word;"><img src="/im2.png" alt="im2" name="im2.png" style="width: 100%; height: auto; max-width: 100%;"></div>
+    </div>
+  </div>
+  <div class="row sectionBlockLayout text-start" style="display: flex; flex-wrap: wrap; margin: 0px; min-height: auto; padding: 0px; font-family:Avionic Wide Heavy, sans-serif;">
+    <div class="container" style="padding: 0px; display: flex; flex-wrap: wrap;">
+      <div class="col-lg-6 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px; word-break: break-word;">
+        <h1 style="text-align: center; color: var(--portalThemeColor4); font-family: 'Avionic Wide Heavy', sans-serif;">
+          Marketing of <b aria-label="Texto primages+ equipment Presione Entrar para editar" style="position: relative;"><i aria-label="Texto primages+ Presione Entrar para editar" style="position: relative;">primages+ </i>equipment</b>
+        </h1>
+      </div>
+      <div class="col-lg-6 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px; word-break: break-word;"><p style="text-align: center; font-family: 'Avionic Wide Heavy', sans-serif;">As pioneers with the Primagest brand in Latin America, we know from firsthand experience the high quality and efficiency achieved with Primagest products. Derived from our trust in Primagest, now we offer all their products and carry out consultancy regarding selection and implementation process.</p></div>
+    </div>
+  </div>
+  <div class="row sectionBlockLayout text-start" style="display: flex; flex-wrap: wrap; margin: 0px; min-height: auto; padding: 0px;">
+    <div class="container" style="padding: 0px; display: flex; flex-wrap: wrap;">
+      <div class="col-lg-6 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px; word-break: break-word;"><img src="/m1.png" alt="m1" name="m1.png" style="width: 100%; height: auto; max-width: 100%;"></div>
+      <div id="contact-section" class="col-lg-6 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px; word-break: break-word;"><img src="/m2.png" alt="m2" name="m2.png" style="width: 100%; height: auto; max-width: 100%;"></div>
+    </div>
+  </div>
+  
+  <i onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top" class="bi bi-arrow-up-circle"></i>
+  <footer class="footer">
+    <p>
+        <span>&copy; 2022</span>
+        <span>1001 Brickell bay dr suite 2700 33131</span>
+        <span>manager@digitalizar.co</span>
+    </p>
+  </footer>
+
+  
+</body>
+
+<!-- Scripts -->
+<script>
+  $(document).ready(function() {
+      $('.navbar-toggler').click(function() {
+          $('#navbarNav').toggleClass('show');
+      });
+  });
+  </script>
+  
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+    window.onload = function() {
+      if (window.navigator.appName == "Microsoft Internet Explorer" || window.navigator.userAgent.indexOf("Trident") > 0) {
+        var searchElement = document.getElementById("search");
+        if (searchElement != null) searchElement.setAttribute("href", "");
+      }
+    };
+
+    function scrollToSection(sectionId) {
+      var section = document.getElementById(sectionId);
+      if (section) {
+          section.scrollIntoView({
+              behavior: 'smooth'
+          });
+      }
+    };
+
+    // Mostrar u ocultar el botón basado en la posición del scroll
+  window.onscroll = function() {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      scrollToTopBtn.style.display = "block";
+    } else {
+      scrollToTopBtn.style.display = "none";
+    }
+  }
+  document.addEventListener('scroll', function() {
+  const navbar = document.getElementById('navbar');
+  if (window.scrollY > 50) { // Ajusta el valor para activar el efecto
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+  // Función para hacer scroll suave hacia arriba
+
+
+    function scrollToTop() {
+    document.body.scrollTop = 0; // Para Safari
+    document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE y Opera
+    };
+
+</script>
+<!-- Incluye jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Incluye Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
